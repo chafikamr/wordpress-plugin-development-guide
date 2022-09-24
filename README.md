@@ -88,7 +88,7 @@ if( class_exists('NS_slider')){
 
 1 - craete a functiojn in the main class `defining_constants`
 ```php
-public function ()
+public function defining_constants()
 {
     define('NS_SLIDER_PATH',plugin_dir_path(__FILE__));
     define('NS_SLIDER_URL',plugin_dir_url(__FILE__));
