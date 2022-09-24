@@ -77,3 +77,8 @@ function wpdocs_codex_book_init() {
 add_action( 'init', 'wpdocs_codex_book_init' );
 
 ````
+
+
+## retrive custom post types from database 
+
+
