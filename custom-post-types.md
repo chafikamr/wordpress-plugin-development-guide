@@ -79,6 +79,7 @@ add_action( 'init', 'wpdocs_codex_book_init' );
 ````
 
 
-## retrive custom post types from database 
+## unregister post type
 
+similarly you can use `unregister_post_type()` function when deactivating the plugin , this function requirzs only one parametere that is the name of the custom post type
 
