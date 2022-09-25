@@ -83,3 +83,20 @@ add_action( 'init', 'wpdocs_codex_book_init' );
 
 similarly you can use `unregister_post_type()` function when deactivating the plugin , this function requirzs only one parametere that is the name of the custom post type
 
+
+### manage custom post type  table columns 
+
+to manage custom post type cilumns we use the hook `manage_{$post_type}_posts_columns` that Filters the columns displayed in the Posts list table for a specific post type.
+
+````php
+function add_book_columns($columns) {
+    unset($columns['author']);
+    return array_merge($columns, 
+              array('publisher' => __('Publisher'),
+                    'book_author' =>__( 'Book Author')));
+}
+add_filter('manage_book_posts_columns' , 'add_book_columns');
+
+````
+
+
