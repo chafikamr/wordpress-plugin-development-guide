@@ -97,10 +97,66 @@ require_once(PLUGIN_PATH . 'views/metabox_fields');
 
 
 ````
-### the view 
+### The view 
 
 the fields created in the view file are that ones that will appear in the metabox 
 ````html
 <label for=""meta-data-1"> meta data label </label>
 <input type="text" name="meta-data-key-1" id="meta-data-1">
 ````
+
+### Saving box data 
+To save meta box data , we create a function that will be executed as the hook `save_post` fires 
+
+
+````php 
+
+add_action('save_post' , 'save_meta_box');
+
+
+function save_metabox($post_id){
+
+
+// doing the check 
+if( isset($_POST['action']  && $_POST['action'] == 'editpost'){
+
+
+
+
+
+
+}
+
+
+
+
+}
+
+
+
+
+
+
+````
+to save post meta wordpress provies meta functions that are responsible for all crud operations with all post types 
+|     	   | Add         | Get| Update | Delete |
+| ------------- |:-------------:| -----:|------| ---|
+| Posts  | add_post_meta | get_post_meta | update_post_meta | delete_post_meta |
+| Users  | add_user_meta | get_user_meta | update_user_meta | delete_user_meta |
+| Comments | add_comment_meta | get_comment_meta | update_comment_meta | delete_comment_meta |
+| Terms | add_term_meta | get_term_meta | update_term_meta | delete_term_meta |
+
+
+When using `get_post_meta' we pass 3 params to the function 
+- param 1 : post id 
+- param 2 : meta key
+- param 3 : fetching methode<br> 
+
+ [ee wp dev doc](https://developer.wordpress.org/reference/functions/get_post_meta/)
+ 
+ it is always recommended to use update_post_meta to save data 
+ - param 1 : post id 
+ - param 2 : meta key that shouild be updated or added if not exist 
+ - param 3 : new value 
+ - param 4 : previous value <br>
+ for more information take a look on [update_post_meta](https://developer.wordpress.org/reference/functions/update_post_meta/)
