@@ -49,3 +49,18 @@ In custom_menu() function
  
  
  ````
+ ### Embedding menu us submenu of other pre built menus 
+ 
+ 
+ the plugin menu can be embedded in other menus by using other function is stead of add_menu_page such us : 
+ - add_dashboard_page()
+ - add_posts_page()
+ - add_media_page()
+ - add_pages_page()
+ - add_comments_page()
+ - add_theme_page()
+ - add_plugins_page()
+ - add_users_page()
+ - add_management_page()
+ - add_options_page()
+ 
