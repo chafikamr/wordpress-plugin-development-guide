@@ -30,6 +30,10 @@ function custom_menu() {
 }
 
 ````
+
+
+
+[check this tutorial for more informztion ](https://webkul.com/blog/how-to-add-menu-in-wordpress-admin-panel/)
 As you can see in custom_menu() function I just used add_menu_page(). This function allow you to create a menu in admin sidebar and map that menu to a page.
 In custom_menu() function
  
