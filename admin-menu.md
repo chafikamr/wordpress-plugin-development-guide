@@ -64,3 +64,21 @@ In custom_menu() function
  - add_management_page()
  - add_options_page()
  
+ ### Creating submenus for top level menus using add_submenu_page() function 
+ This function takes a capability which will be used to determine whether or not a page is included in the menu.
+
+The function which is hooked in to handle the output of the page must check that the user has the required capability as well.
+
+````php
+
+add_submenu_page(
+'slug', // this is the slug of the parent menu
+'page title', // this page title of this menu
+'menu title' , // menu title of this submenu 
+'manage_opions' , // the capability the user needs to acces 
+'slug' , // the slug for the page 
+'callback_function' , // outputing conent function 
+)
+
+
+````
