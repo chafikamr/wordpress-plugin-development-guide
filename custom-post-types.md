@@ -99,4 +99,23 @@ add_filter('manage_book_posts_columns' , 'add_book_columns');
 
 ````
 
+now we have added needed columns to CPT tablle , let us fill it with the data 
+````php
+/* Display custom column stickiness */
+function display_posts_stickiness( $column, $post_id ) {
+    if ($column == 'sticky'){
+        echo '<input type="checkbox" disabled', ( is_sticky( $post_id ) ? ' checked' : ''), '/>';
+    }
+}
+add_action( 'manage_posts_custom_column' , 'display_posts_stickiness', 10, 2 );
 
+/* Add custom column to post list */
+function add_sticky_column( $columns ) {
+    return array_merge( $columns, 
+        array( 'sticky' => __( 'Sticky', 'your_text_domain' ) ) );
+}
+add_filter( 'manage_posts_columns' , 'add_sticky_column' );
+
+
+
+````
