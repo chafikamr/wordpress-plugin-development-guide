@@ -104,7 +104,7 @@ now we have added needed columns to CPT tablle , let us fill it with the data
 /* Display custom column stickiness */
 function display_posts_stickiness( $column, $post_id ) {
     if ($column == 'sticky'){
-        echo '<input type="checkbox" disabled', ( is_sticky( $post_id ) ? ' checked' : ''), '/>';
+        echo '<input type="checkbox" disabled', ( is_sticky( $post_id ) ? ' checked' : ''), '/>';//use get_post_meta by post id
     }
 }
 add_action( 'manage_posts_custom_column' , 'display_posts_stickiness', 10, 2 );
