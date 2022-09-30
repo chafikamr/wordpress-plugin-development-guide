@@ -19,6 +19,23 @@ function my_callback(){
 
 ````
 
+````php
+
+add_action( 'admin_enqueue_scripts', 'my_callback' );
+
+
+function my_callback(){
+
+// block of code
+
+
+
+}
+
+
+
+````
+
 #### register script / style 
 
 
@@ -34,12 +51,18 @@ wp_register_script( $handle, $src, $deps, $ver, $in_footer );
 register stylsheet 
 ````php
 
-function wp_register_style( $handle, $src, $deps = array(), $ver = false, $media = 'all' ) {
-	_wp_scripts_maybe_doing_it_wrong( __FUNCTION__, $handle );
-
-	return wp_styles()->add( $handle, $src, $deps, $ver, $media );
-}
+ wp_register_style( $handle, $src, $deps = array(), $ver = false, $media = 'all' ) 
 
 
+
+````
+
+
+#### enquee script and style 
+
+
+````php
+wp_enqueue_style( 'my-plugin' );
+wp_enqueue_sscript( 'my-plugin' );
 
 ````
