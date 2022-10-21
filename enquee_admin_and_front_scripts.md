@@ -66,3 +66,13 @@ wp_enqueue_style( 'my-plugin' );
 wp_enqueue_sscript( 'my-plugin' );
 
 ````
+
+
+
+#### add html script to header front end 
+
+````php
+
+add_action('wp_head', 'inject_required_scripts');
+
+````
