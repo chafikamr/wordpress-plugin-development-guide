@@ -48,3 +48,49 @@ foreach ( $fivesdrafts as $fivesdraft ) {
 
 
 ````
+
+ ## get var
+ 
+ ````php
+ 
+public function get_var( $query = null, $x = 0, $y = 0 ) {
+	$this->func_call = "\$db->get_var(\"$query\", $x, $y)";
+
+	if ( $query ) {
+		if ( $this->check_current_query && $this->check_safe_collation( $query ) ) {
+			$this->check_current_query = false;
+		}
+
+		$this->query( $query );
+	}
+
+	// Extract var out of cached results based on x,y vals.
+	if ( ! empty( $this->last_result[ $y ] ) ) {
+		$values = array_values( get_object_vars( $this->last_result[ $y ] ) );
+	}
+
+	// If there is a value return it, else return null.
+	return ( isset( $values[ $x ] ) && '' !== $values[ $x ] ) ? $values[ $x ] : null;
+}
+
+ 
+ 
+ ````
+ ## insert 
+ 
+````php
+$wpdb->insert(
+	'table',
+	array(
+		'column1' => 'value1',
+		'column2' => 123,
+	),
+	array(
+		'%s',
+		'%d',
+	)
+);
+
+
+
+````
