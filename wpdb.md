@@ -19,3 +19,12 @@
        require_once(ABSPATH.'wp-admin/includes/upgrade.php');
    dbDelta($query);
 ````
+## get row 
+````php 
+$res =  $wpdb->get_row("SELECT * FROM {$wpdb->prefix}posts WHERE post_name ='hello-world';",'ARRAY_A');
+// https://developer.wordpress.org/reference/classes/wpdb/#select-a-row
+
+
+
+
+````
