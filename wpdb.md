@@ -28,3 +28,23 @@ $res =  $wpdb->get_row("SELECT * FROM {$wpdb->prefix}posts WHERE post_name ='hel
 
 
 ````
+
+## Execute query 
+````php
+
+$fivesdrafts = $wpdb->get_results(
+	"
+		SELECT ID, post_title
+		FROM $wpdb->posts
+		WHERE post_status = 'draft'
+		AND post_author = 5
+	"
+);
+
+foreach ( $fivesdrafts as $fivesdraft ) {
+	echo $fivesdraft->post_title;
+}
+
+
+
+````
